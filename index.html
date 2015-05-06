@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="js/libs/jquery.js"></script>
+  	<script src="js/libs/handlebars.js"></script>
+  	<script src="js/libs/ember.js"></script>
+  	<script src="js/libs/ember-data.js"></script>
+  	<script src="js/libs/localstorage_adapter.js"></script>
+  	<script src="js/application.js"></script>
+  	<script src="js/router.js"></script>
+  	<script src="js/controllers/home_controller.js"></script>
+		<style>
+			#page-wrapper {
+				position: relative;
+				width: 100%;
+			}
+			#nav-wrapper {
+				float: left;
+				width: 20%;
+			}
+			#main-wrapper {
+				margin-left: 20%;
+				width: 78%;
+				height: 500px;
+				background-color: #dddddd;
+			}
+			#nav-list {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/x-handlebars" data-template-name="app">
+		<div id="page-wrapper">
+			<div id="nav-wrapper">
+				<ul id="nav-list">
+					<li><a>首页</a></li>
+					<li><a>新增单词</a></li>
+					<li><a>全部单词</a></li>
+				</ul>
+			</div>
+			<div id="main-wrapper">
+				{{outlet}}
+			</div>
+		</div>
+		</script>
+		<script type="text/x-handlebars" data-template-name="app/index">
+			{{input type="text" value=searchWord}}
+			<button id="search-btn" {{action 'search'}}>搜索</button>
+		</script>
+	</body>
+	
+</html>
